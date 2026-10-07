@@ -66,14 +66,15 @@ export default function Home() {
           </p>
 
           <div className="mx-auto mt-8 aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-2xl ring-2 ring-ibp-gold/50">
-            <video
-              controls
-              preload="metadata"
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/GIfZF68Gwrg"
+              title="Apresentação do Instituto Bíblico de Paulínia"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
               className="h-full w-full"
-            >
-              <source src="/video/apresentacao-ibp.mp4" type="video/mp4" />
-              Seu navegador não suporta a exibição de vídeo em HTML5.
-            </video>
+            />
           </div>
 
           <Link
