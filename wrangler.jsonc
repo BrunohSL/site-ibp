@@ -1,0 +1,14 @@
+// Publicação na Cloudflare (Workers com arquivos estáticos).
+// O site é só a pasta out/ gerada por `npm run build` — não existe código de servidor.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  // Precisa ser igual ao nome do projeto no painel da Cloudflare.
+  "name": "site-ibp",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./out",
+    // /eventos serve out/eventos.html, igual ao comportamento da Cloudflare Pages.
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}

@@ -3,7 +3,8 @@
 ## Como funciona
 
 - **Next.js em modo estático** (`output: "export"`): `npm run build` gera a pasta `out/` só com
-  HTML/CSS/JS. Não existe servidor — o site fica hospedado de graça na **Cloudflare Pages**.
+  HTML/CSS/JS. Não existe servidor — o site fica hospedado de graça na **Cloudflare**
+  (Workers com arquivos estáticos, configurado em `wrangler.jsonc`).
 - **Supabase (plano gratuito)** guarda o que muda pelo painel: a tabela `eventos`, as imagens
   dos cartazes (bucket `eventos`) e as contas de quem administra o site.
 - Páginas institucionais, cursos, equipe e artigos são conteúdo fixo em `src/lib/*.ts` e
@@ -53,7 +54,7 @@ npx supabase stop
 
 5. Em **Authentication > URL Configuration**, coloque a URL do site em **Site URL** e em
    **Redirect URLs** adicione `https://<seu-dominio>/admin/redefinir-senha` (e a URL
-   `*.pages.dev` enquanto o domínio não estiver apontado). Sem isso o "esqueci minha senha"
+   `*.workers.dev` enquanto o domínio não estiver apontado). Sem isso o "esqueci minha senha"
    não funciona.
 6. Em **Project Settings > API Keys**, copie a URL do projeto e a chave pública
    (publishable/anon). **Nunca** use a `service_role`/secret no site.
@@ -68,18 +69,18 @@ git remote add origin git@github.com:<usuario>/ibp.git
 git push -u origin master
 ```
 
-### 3. Cloudflare Pages
+### 3. Cloudflare (Workers com arquivos estáticos)
 
 1. Crie uma conta em <https://dash.cloudflare.com>.
-2. **Workers & Pages > Create > Pages > Connect to Git** e escolha o repositório.
-3. Configuração do build:
-   - Framework preset: **Next.js (Static HTML Export)**
+2. **Workers & Pages > Create > Import a repository** e escolha o repositório.
+3. Em **Settings > Build**:
    - Build command: `npm run build`
-   - Build output directory: `out`
-4. Em **Environment variables**, adicione `NEXT_PUBLIC_SUPABASE_URL` e
-   `NEXT_PUBLIC_SUPABASE_ANON_KEY`.
-5. Salve. Cada `git push` publica uma versão nova; branches diferentes ganham uma URL de
-   prévia própria.
+   - Deploy command: `npx wrangler deploy`
+   - O nome do projeto precisa ser igual ao `name` do `wrangler.jsonc`.
+4. Em **Settings > Build > Variables and secrets** (variáveis de **build**, não as de
+   runtime), adicione `NEXT_PUBLIC_SUPABASE_URL` e `NEXT_PUBLIC_SUPABASE_ANON_KEY`. Elas são
+   gravadas no site durante o build.
+5. Cada `git push` na `main` publica uma versão nova.
 
 ### 4. Domínio
 
@@ -87,7 +88,7 @@ Quando o domínio for transferido:
 
 1. Adicione o domínio na Cloudflare (**Add a site**, plano Free) e troque os servidores DNS
    no Registro.br pelos que a Cloudflare indicar.
-2. No projeto do Pages, **Custom domains > Set up a custom domain**.
+2. No projeto da Cloudflare, **Settings > Domains & Routes > Add > Custom domain**.
 3. Atualize **Site URL** e **Redirect URLs** no Supabase (passo 1.5).
 4. Se o domínio tinha e-mail (ex.: `contato@...`), recrie os registros MX na Cloudflare ou
    use o **Email Routing** (grátis) para encaminhar para um Gmail.
