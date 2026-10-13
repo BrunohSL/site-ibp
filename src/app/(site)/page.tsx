@@ -67,7 +67,7 @@ export default function Home() {
 
           <div className="mx-auto mt-8 aspect-video w-full overflow-hidden rounded-2xl bg-black shadow-2xl ring-2 ring-ibp-gold/50">
             <iframe
-              src="https://www.youtube-nocookie.com/embed/GIfZF68Gwrg"
+              src="https://www.youtube-nocookie.com/embed/646n6Lh2zLU"
               title="Apresentação do Instituto Bíblico de Paulínia"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               referrerPolicy="strict-origin-when-cross-origin"
