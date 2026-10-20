@@ -77,6 +77,11 @@ export default async function CursoPage({
         <h2 className="font-serif text-2xl font-bold text-white">
           Grade curricular
         </h2>
+        {curso.apresentacao && (
+          <p className="mt-4 leading-relaxed text-white/70">
+            {curso.apresentacao}
+          </p>
+        )}
         <div className="mt-8 space-y-10">
           {curso.grade.map((bloco, i) => (
             <div key={bloco.titulo ?? i}>
