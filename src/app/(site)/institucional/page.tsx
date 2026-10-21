@@ -107,12 +107,6 @@ export default function InstitucionalPage() {
               (Conselho de Educação e Cultura Religiosa da CGADB)
             </li>
             <li>
-              Afiliado à{" "}
-              <strong className="font-semibold text-white">AETAL</strong>{" "}
-              (Associação Evangélica de Educação Teológica na América
-              Latina)
-            </li>
-            <li>
               Material didático de apoio fornecido pela{" "}
               <strong className="font-semibold text-white">EETAD</strong>{" "}
               (Escola de Educação Teológica das Assembleias de Deus), tendo
@@ -187,16 +181,23 @@ export default function InstitucionalPage() {
           </h2>
           <p className="max-w-xl text-white/80">
             O IBP é mantido pela Assembleia de Deus e conta com o respaldo do
-            CGADB e da AETAL. Nosso material didático é fornecido pela EETAD
+            CGADB. Nosso material didático é fornecido pela EETAD
             — Escola de Educação Teológica das Assembleias de Deus.
           </p>
-          <div className="rounded-lg bg-white p-6">
+          <div className="flex items-center justify-center gap-12">
             <Image
-              src="/brand/parceiros.png"
-              alt="Logotipos do IBP, CGADB, AETAL e EETAD"
-              width={640}
-              height={200}
-              className="h-auto w-full max-w-xl"
+              src="/brand/cgadb.png"
+              alt="Logotipo da CGADB"
+              width={104}
+              height={162}
+              className="h-24 w-auto"
+            />
+            <Image
+              src="/brand/eetad.png"
+              alt="Logotipo da EETAD"
+              width={182}
+              height={144}
+              className="h-24 w-auto"
             />
           </div>
         </div>

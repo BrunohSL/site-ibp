@@ -58,7 +58,7 @@ export default function Footer() {
           </h3>
           <p className="text-sm text-white/80">
             Mantido pela Assembleia de Deus. Material didático fornecido pela
-            EETAD, com o respaldo do CGADB e da AETAL.
+            EETAD, com o respaldo do CGADB.
           </p>
         </div>
       </div>

@@ -99,7 +99,7 @@ export default function Home() {
           </div>
           <div>
             <p className="text-sm text-white/60">Respaldo institucional</p>
-            <p className="mt-1 font-serif text-2xl font-bold text-white">CGADB · AETAL</p>
+            <p className="mt-1 font-serif text-2xl font-bold text-white">CGADB</p>
           </div>
         </div>
       </section>

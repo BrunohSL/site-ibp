@@ -124,7 +124,7 @@ export const cursos: Curso[] = [
     nome: "Curso de Formação de Obreiros",
     icone: "/cursos/curso-cfo.png",
     resumo:
-      "Prepara obreiros para servir com excelência nas diversas frentes de trabalho da igreja local.",
+      "Prepara obreiros para servir com excelência nas diversas frentes de trabalho da igreja local. Conclua em apenas 4 meses!",
     grade: [
       {
         disciplinas: [
