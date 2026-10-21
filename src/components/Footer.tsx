@@ -4,7 +4,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="border-t border-ibp-gold-light/20 bg-ibp-blue-dark text-white">
-      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-4">
+      <div className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:grid-cols-2 lg:grid-cols-5">
         <div className="sm:col-span-2 lg:col-span-1">
           <Image
             src="/brand/logo-branco.png"
@@ -60,6 +60,42 @@ export default function Footer() {
             Mantido pela Assembleia de Deus. Material didático fornecido pela
             EETAD, com o respaldo do CGADB.
           </p>
+        </div>
+
+        <div>
+          <h3 className="mb-4 text-sm font-bold uppercase tracking-wide text-ibp-gold">
+            Nossas Redes Sociais
+          </h3>
+          <ul className="flex gap-4">
+            <li>
+              <a
+                href="https://www.youtube.com/@institutobiblicodepaulinia2625"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube do IBP"
+                className="text-white/80 hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" fill="currentColor" className="h-6 w-6" aria-hidden="true">
+                  <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z" />
+                </svg>
+              </a>
+            </li>
+            <li>
+              <a
+                href="https://www.instagram.com/ibpinstitutodepaulinia?srtk=MW1kdThkcm1ycjF0cQ=="
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram do IBP"
+                className="text-white/80 hover:text-white"
+              >
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="h-6 w-6" aria-hidden="true">
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" />
+                </svg>
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
